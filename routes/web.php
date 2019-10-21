@@ -20,3 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/driver', 'DriverController');
+
+Route::get('/event-up', function () {
+    return view('Event-up.event_up');
+});
