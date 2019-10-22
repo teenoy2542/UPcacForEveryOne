@@ -22,7 +22,7 @@
                         <div class="card-header text-center">รถที่จะขึ้นมอ</div>
                         <div class="card-body">
                             <div class="form-group" >
-                                <label>สวัสดีครับท่านผู้ชม</label>
+                                <label>ครับท่านผู้ชม</label>
                             </div>
                         </div>
                             
