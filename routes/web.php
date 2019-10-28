@@ -24,3 +24,4 @@ Route::resource('/driver', 'DriverController');
 Route::get('/event-up', function () {
     return view('Event-up.event_up');
 });
+Route::get('/getdata', 'TravelController@Getdata');

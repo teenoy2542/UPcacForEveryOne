@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -21,8 +21,9 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="height:55px;">
             <div class="container">
+                <button class="w3-button w3-white w3-large" onclick="w3_open()">&#9776;</button>
                 <a class="navbar-brand" href="{{ url('/') }}">
                     UP CAC
                 </a>
@@ -74,9 +75,29 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="">
+                <div class="w3-sidebar w3-bar-block w3-dark-grey w3-animate-left" style="display:none" id="mySidebar">                        
+                        <a href="#" class="w3-bar-item w3-button">บัญชีผู้ใช้</a>
+                        <a href="#" class="w3-bar-item w3-button">รายการ</a>
+                        <a href="#" class="w3-bar-item w3-button">การตั้งค่า</a>
+                      </div>
             @yield('content')
         </main>
     </div>
 </body>
+<script>
+    var side = false;
+        function w3_open() {
+            side = !side;
+            if(side == true){
+                document.getElementById("mySidebar").style.display = "block";
+            }else{
+                w3_close()
+            }
+            
+        }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+        </script>
 </html>

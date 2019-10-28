@@ -1,18 +1,5 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    <div class="pos-f-t">
-    <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-4">
-        <h5 class="text-white h4">Collapsed content</h5>
-        <span class="text-muted">Toggleable via the navbar brand.</span>
-        </div>
-    </div>
-    <nav class="navbar navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-    </nav>
-    </div>
+@extends('layouts.app')  
+@section('content')
 
     <div class="container">
         <div class="row justify-content-center">
@@ -21,9 +8,30 @@
                     <div class="card">
                         <div class="card-header text-center">รถที่จะขึ้นมอ</div>
                         <div class="card-body">
-                            <div class="form-group" >
-                                <label>ครับท่านผู้ชม</label>
-                            </div>
+                            
+                                <table class="table table-hover">
+                                    <thead align="center">
+                                      <tr>
+                                        <th scope="col">เวลา</th>
+                                        <th scope="col">ราคา</th>
+                                        <th scope="col">จำนวนที่นั่ง</th>
+                                        <th scope="col">สถานที่รับ</th>
+                                        <th scope="col">สถานะการเดินทาง</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody align="center">
+                                    @foreach ($travel as $item)
+                                      <tr>
+                                        <th scope="row">{{$item->time_start}}</th>
+                                        <td>{{$item->price}}</td>
+                                        <td>{{$item->seat_amount}}</td>
+                                        <td>{{$item->location_up}}</td>
+                                        <td>{{$item->status}}</td>
+                                      </tr>
+                                    @endforeach
+                                    </tbody>
+                                  </table>          
+                            
                         </div>
                             
                     </div>
@@ -31,4 +39,5 @@
             </div>
         </div>
     </div>
+@endsection
 
