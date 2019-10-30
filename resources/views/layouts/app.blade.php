@@ -25,7 +25,7 @@
             <div class="container">
                 <button class="w3-button w3-white w3-large" onclick="w3_open()">&#9776;</button>
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    UP CAC
+                    UPCAC
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -58,7 +58,7 @@
                                     <a class="dropdown-item" href="{{ url("/driver/create") }}">สร้างฟอร์ม</a>
 
                                     @if(Auth::user()->type == 'Driver')
-                                    <a class="dropdown-item" href="{{ url("/driver/registercar") }}">ลงทะเบียนรถ</a>
+                                    <a class="dropdown-item" href="{{ url("/driver/licensecar/create") }}">ลงทะเบียนรถ</a>
                                     @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

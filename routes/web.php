@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/driver/registercar', 'DriverController@registercar');
+Route::resource('/driver/licensecar', 'LicenseCarController');
 
 Route::resource('/driver', 'DriverController');
 

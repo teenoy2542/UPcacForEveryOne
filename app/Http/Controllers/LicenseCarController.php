@@ -6,27 +6,17 @@ use Illuminate\Http\Request;
 
 use DB;
 use Auth;
-use App\Driver;
 
-class DriverController extends Controller
+class LicenseCarController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
-        if (Auth::user()->type == 'User'){
-            return view('home');
-        }
-        return view('driver.create');
+        //
     }
 
     /**
@@ -36,9 +26,8 @@ class DriverController extends Controller
      */
     public function create()
     {
-        return view('driver.create');
+        return view('driver.registercar');
     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -48,17 +37,15 @@ class DriverController extends Controller
      */
     public function store(Request $request)
     {
-        $uid = Auth::user()->id;
-        $email = Auth::user()->email;
-        $date = $_POST['date'];
-        $time = $_POST['time'];
-        $place1 = $_POST['place1'];
-        $number = $_POST['number'];
-        $price = $_POST['price'];
-        $place2 = $_POST['place2'];
+        $id_users = Auth::user()->id;
+        $license_car = $_POST['license_car'];
+        $brand_car = $_POST['brand_car'];
+        $model_car = $_POST['model_car'];
+        $color_car = $_POST['color_car'];
+        $number_seats = $_POST['number_seats'];
 
-        DB::insert("insert into drivers (uid, email, date, time, place1, number, price, place2) values (?, ?, ?, ?, ?, ?, ?, ?)",[
-            $uid, $email, $date, $time, $place1, $number, $price, $place2
+        DB::insert("insert into license_car (id_users, license_car, brand_car, model_car, color_car, number_seats) values (?, ?, ?, ?, ?, ?)",[
+            $id_users, $license_car, $brand_car, $model_car, $color_car, $number_seats
         ]);
 
         return redirect('/');

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">สำหรับ คนขับ</div>
+                <div class="card-header">ลงทะเบียนรถ</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,28 +14,51 @@
                         </div>
                     @endif
 
-                    @if (Auth::user()->license_car == '')
+                    <form action="{{url("/driver/licensecar")}}" method="post">
+                        {{ csrf_field() }}
+                        <div>
+                            <label>ทะเบียนรถ</label>
+                            <div>
+                                <input class='form-control mb-2' name='license_car' type='text' required/>
+                            </div>
+                        </div>
 
-                    <form action="{{url('/registercar')}}" method="post">
-                        <label>เลขใบขับขี่: </label>
-                        <input class='form-control mb-2' name='license_driver' type='number'/>
+                        <div>
+                            <label>ยี่ห้อรถ</label>
+                            <div>
+                                <input class='form-control mb-2' name='brand_car' type='text' required/>
+                            </div>
+                        </div>
 
-                        <label>ทะเบียนรถ: </label>
-                        <input class='form-control mb-2' name='license_car' type='text'/>
+                        <div>
+                            <label>รุ่นรถ</label>
+                            <div>
+                                <input class='form-control mb-2' name='model_car' type='text' required/>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label>สีรถ</label>
+                            <div>
+                                <input class='form-control mb-2' name='color_car' type='text' required/>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label>จำนวนที่นั่ง</label>
+                            <div>
+                                <select id='number_seats' onchange="disp(dis)" class='form-control' name="number_seats" required>
+                                        <option value="" disabled selected>Select</option>
+                                        <option value="2">2</option>
+                                        <option value="4">4</option>
+                                        <option value="6">6</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <div align='right'>
-                            <input class='btn btn-primary mb-2' type='submit' value='Save'/>
+                            <input class='btn btn-primary mb-2' type='submit' value='ลงทะเบียนรถ'/>
                         </div>
                     </form>
-
-                    @else
-
-                    <form action="" method="post">
-
-                    </form>
-
-                    @endif
-
                 </div>
             </div>
         </div>

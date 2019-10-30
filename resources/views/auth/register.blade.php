@@ -65,16 +65,16 @@
                             <label for="type" class="col-md-4 col-form-label text-md-right">{{ __('ประเภทผู้ใช้') }}</label>
 
                             <div class="col-md-6">
-                                <select id='us' onchange="disp(dis)" class='form-control' name="type" id="" required>
+                                <select id='type' onchange="disp()" class='form-control' name="type" required>
                                     <option value="" disabled selected>Select</option>
                                     <option  value="User">User</option>
-                                    <option value="Driver">Driver</option>
+                                 <option value="Driver">Driver</option>
                                 </select>
-                            </div>
+                           </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="license_driver" class="col-md-4 col-form-label text-md-right">{{ __('ใบขับขี่') }}</label>
+                            <label for="license_driver" class="col-md-4 col-form-label text-md-right">{{ __('เลขใบขับขี่') }}</label>
                             <div class="col-md-6">
                                 <input id="license_driver"  type="text" class="form-control" name="license_driver" value="{{ old('license_driver') }}" autocomplete="license_driver" autofocus>
                             </div>
@@ -93,12 +93,9 @@
         </div>
     </div>
     <script>
-        const dis = false;
-        console.log(dis);
-        function disp(dis){
-            var a = document.getElementById('us').value;
-            if (a == 'User'){
-                var dis = !dis;
+        function disp(){
+            var type = document.getElementById('type').value;
+            if (type == 'User'){
                 $( "#license_driver" ).prop( "disabled", true );
                 $( "#license_driver" ).val("");
             }

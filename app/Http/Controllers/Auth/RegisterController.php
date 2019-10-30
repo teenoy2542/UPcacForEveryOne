@@ -53,7 +53,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'type' => ['required', 'string', 'max:255'],
-            'license_driver' => ['required', 'string', 'max:255']
+            'license_driver' => ['string', 'max:255']
         ]);
     }
 
@@ -65,12 +65,21 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'type' => $data['type'],
-            'license_driver' => $data['license_driver'],
-        ]);
+        if ($data['type'] == "User"){
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'type' => $data['type'],
+            ]);
+        }else if($data['type'] == "Driver"){
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'type' => $data['type'],
+                'license_driver' => $data['license_driver']
+            ]);
+        }
     }
 }

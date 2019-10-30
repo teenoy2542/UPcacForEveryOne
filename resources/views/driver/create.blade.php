@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <form action="{{url("driver")}}" method="post">
+                    <form action="{{url("/driver")}}" method="post">
                        {{ csrf_field() }}
                        <label>วันที่: </label>
                        <input class='form-control mb-2' name='date' type='date'/>
