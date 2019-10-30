@@ -26,7 +26,12 @@ class DriverController extends Controller
         if (Auth::user()->type == 'User'){
             return view('home');
         }
-        return view('driver.index');
+        return view('driver.create');
+    }
+
+    public function registercar()
+    {
+        return view('driver.registerCar');
     }
 
     /**
@@ -38,6 +43,7 @@ class DriverController extends Controller
     {
         return view('driver.create');
     }
+
 
     /**
      * Store a newly created resource in storage.

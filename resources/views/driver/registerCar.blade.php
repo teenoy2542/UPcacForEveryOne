@@ -16,25 +16,22 @@
 
                     @if (Auth::user()->license_car == '')
 
-                    <form action="" method="post">
-                        <label>ทะเบียนรถ: </label>
-                        <input class='form-control mb-2' name='license_car' type='text'/>
-
+                    <form action="{{url('/registercar')}}" method="post">
                         <label>เลขใบขับขี่: </label>
                         <input class='form-control mb-2' name='license_driver' type='number'/>
 
-                        <label>เบอร์โทร: </label>
-                        <input class='form-control mb-2' name='tel' type='number'/>
+                        <label>ทะเบียนรถ: </label>
+                        <input class='form-control mb-2' name='license_car' type='text'/>
 
                         <div align='right'>
                             <input class='btn btn-primary mb-2' type='submit' value='Save'/>
                         </div>
                     </form>
-                    
+
                     @else
 
                     <form action="" method="post">
-                        
+
                     </form>
 
                     @endif

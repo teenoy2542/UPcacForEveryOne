@@ -54,10 +54,12 @@
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ url("/driver/create") }}">สร้างฟอร์ม</a>
 
+                                    @if(Auth::user()->type == 'Driver')
+                                    <a class="dropdown-item" href="{{ url("/driver/registercar") }}">ลงทะเบียนรถ</a>
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -76,7 +78,7 @@
         </nav>
 
         <main class="">
-                <div class="w3-sidebar w3-bar-block w3-dark-grey w3-animate-left" style="display:none" id="mySidebar">                        
+                <div class="w3-sidebar w3-bar-block w3-dark-grey w3-animate-left" style="display:none" id="mySidebar">
                         <a href="#" class="w3-bar-item w3-button">บัญชีผู้ใช้</a>
                         <a href="#" class="w3-bar-item w3-button">รายการ</a>
                         <a href="#" class="w3-bar-item w3-button">การตั้งค่า</a>
@@ -94,7 +96,7 @@
             }else{
                 w3_close()
             }
-            
+
         }
         function w3_close() {
             document.getElementById("mySidebar").style.display = "none";

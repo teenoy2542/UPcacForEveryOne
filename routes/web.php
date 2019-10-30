@@ -19,9 +19,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/driver/registercar', 'DriverController@registercar');
+
 Route::resource('/driver', 'DriverController');
 
 Route::get('/event-up', function () {
     return view('Event-up.event_up');
 });
 Route::get('/getdata', 'TravelController@Getdata');
+
