@@ -6,27 +6,17 @@ use Illuminate\Http\Request;
 
 use DB;
 use Auth;
-use App\Driver;
 
-class DriverController extends Controller
+class LicenseCarController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
-        if (Auth::user()->type == 'User'){
-            return view('home');
-        }
-        return view('driver.create');
+        //
     }
 
     /**
@@ -36,9 +26,8 @@ class DriverController extends Controller
      */
     public function create()
     {
-        return view('driver.create');
+        return view('driver.registercar');
     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -49,20 +38,14 @@ class DriverController extends Controller
     public function store(Request $request)
     {
         $id_users = Auth::user()->id;
-        $date = $_POST['date'];
-        $time = $_POST['time'];
-        $location_up = $_POST['location_up'];
-        $location_down = $_POST['location_down'];
-        $seat_empty = $_POST['seat_empty'];
-        $price = $_POST['price'];
-        if($location_up == 'ที่รอรถเมล์หน้ามอ'){
-            $category = 'ขึ้น';
-        }elseif($location_down == 'ที่รอรถเมล์หน้ามอ'){
-            $category = 'ลง';
-        }
+        $license_car = $_POST['license_car'];
+        $brand_car = $_POST['brand_car'];
+        $model_car = $_POST['model_car'];
+        $color_car = $_POST['color_car'];
+        $number_seats = $_POST['number_seats'];
 
-        DB::insert("insert into drivers (id_users, date, time, location_up, location_down, seat_empty, price, category) values (?, ?, ?, ?, ?, ?, ?, ?)",[
-            $id_users, $date, $time, $location_up, $location_down, $seat_empty, $price, $category
+        DB::insert("insert into license_car (id_users, license_car, brand_car, model_car, color_car, number_seats) values (?, ?, ?, ?, ?, ?)",[
+            $id_users, $license_car, $brand_car, $model_car, $color_car, $number_seats
         ]);
 
         return redirect('/');
