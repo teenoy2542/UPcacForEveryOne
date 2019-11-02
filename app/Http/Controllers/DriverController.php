@@ -48,17 +48,21 @@ class DriverController extends Controller
      */
     public function store(Request $request)
     {
-        $uid = Auth::user()->id;
-        $email = Auth::user()->email;
+        $id_users = Auth::user()->id;
         $date = $_POST['date'];
         $time = $_POST['time'];
-        $place1 = $_POST['place1'];
-        $number = $_POST['number'];
+        $location_up = $_POST['location_up'];
+        $location_down = $_POST['location_down'];
+        $seat_empty = $_POST['seat_empty'];
         $price = $_POST['price'];
-        $place2 = $_POST['place2'];
+        if($location_up == 'ที่รอรถเมล์หน้ามอ'){
+            $category = 'ขึ้น';
+        }elseif($location_down == 'ที่รอรถเมล์หน้ามอ'){
+            $category = 'ลง';
+        }
 
-        DB::insert("insert into drivers (uid, email, date, time, place1, number, price, place2) values (?, ?, ?, ?, ?, ?, ?, ?)",[
-            $uid, $email, $date, $time, $place1, $number, $price, $place2
+        DB::insert("insert into drivers (id_users, date, time, location_up, location_down, seat_empty, price, category) values (?, ?, ?, ?, ?, ?, ?, ?)",[
+            $id_users, $date, $time, $location_up, $location_down, $seat_empty, $price, $category
         ]);
 
         return redirect('/');

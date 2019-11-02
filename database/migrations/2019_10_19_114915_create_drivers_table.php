@@ -15,14 +15,14 @@ class CreateDriversTable extends Migration
     {
         Schema::create('drivers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('uid');
-            $table->string('email');
+            $table->string('id_users');
             $table->string('date');
             $table->string('time');
-            $table->string('place1');
-            $table->integer('number');
+            $table->string('location_up');
+            $table->string('location_down');
+            $table->integer('seat_empty');
             $table->integer('price');
-            $table->string('place2');
+            $table->string('category');
             $table->timestamps();
         });
     }

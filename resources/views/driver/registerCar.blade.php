@@ -47,7 +47,7 @@
                             <label>จำนวนที่นั่ง</label>
                             <div>
                                 <select id='number_seats' onchange="disp(dis)" class='form-control' name="number_seats" required>
-                                        <option value="" disabled selected>Select</option>
+                                        <option value="" disabled selected>เลือก</option>
                                         <option value="2">2</option>
                                         <option value="4">4</option>
                                         <option value="6">6</option>

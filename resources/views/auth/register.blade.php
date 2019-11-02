@@ -66,7 +66,7 @@
 
                             <div class="col-md-6">
                                 <select id='type' onchange="disp()" class='form-control' name="type" required>
-                                    <option value="" disabled selected>Select</option>
+                                    <option value="" disabled selected>เลือก</option>
                                     <option  value="User">User</option>
                                  <option value="Driver">Driver</option>
                                 </select>

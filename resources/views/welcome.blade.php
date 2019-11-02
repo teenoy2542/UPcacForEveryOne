@@ -11,9 +11,9 @@
                     <div class="card-header" align='right'>คนขับรถ</div>
 
                     <div class="card-body">
-                        <b>ทางผ่าน: </b> {{$item->place1}}
+                        <b>สถานที่ขึ้น: </b> {{$item->location_up}}
                         <br>
-                        <b>สถานที่ไปส่ง: </b> {{$item->place2}}
+                        <b>สถานที่ลง: </b> {{$item->location_down}}
                         <div align='right'>
                             <a class='btn btn-outline-primary mb-2' href='/'>
                                 เข้าร่วม
