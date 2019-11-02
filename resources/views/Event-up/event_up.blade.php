@@ -17,16 +17,22 @@
                                         <th scope="col">จำนวนที่นั่ง</th>
                                         <th scope="col">สถานที่รับ</th>
                                         <th scope="col">สถานะการเดินทาง</th>
+                                        <th scope="col">การเดินทาง</th>
                                       </tr>
                                     </thead>
                                     <tbody align="center">
-                                    @foreach ($travel as $item)
+                                    @foreach ($travels as $item)
                                       <tr>
                                         <th scope="row">{{$item->time_start}}</th>
                                         <td>{{$item->price}}</td>
                                         <td>{{$item->seat_amount}}</td>
                                         <td>{{$item->location_up}}</td>
                                         <td>{{$item->status}}</td>
+
+                                        <?php 
+                                        echo "<td><a href='/travel/$item->travel_id' ><button type='button' class='btn btn-outline-info'>เข้าร่วมการเดินทาง</button></a></td>";
+                                        ?>
+                                        
                                       </tr>
                                     @endforeach
                                     </tbody>

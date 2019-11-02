@@ -23,8 +23,11 @@ Route::resource('/driver/licensecar', 'LicenseCarController');
 
 Route::resource('/driver', 'DriverController');
 
-Route::get('/event-up', function () {
-    return view('Event-up.event_up');
-});
+Route::get('/event-up','TravelController@Getdata');
+
+Route::get('/travel/{id}','TravelController@selectedtravel');
+
+Route::get('/accept/{id}','TravelController@accept');    
+
 Route::get('/getdata', 'TravelController@Getdata');
 
