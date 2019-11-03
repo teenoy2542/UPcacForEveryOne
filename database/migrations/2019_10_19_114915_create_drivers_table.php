@@ -20,9 +20,11 @@ class CreateDriversTable extends Migration
             $table->string('time');
             $table->string('location_up');
             $table->string('location_down');
+            $table->integer('seat_amount');
             $table->integer('seat_empty');
             $table->integer('price');
             $table->string('category');
+            $table->string('status');
             $table->timestamps();
         });
     }

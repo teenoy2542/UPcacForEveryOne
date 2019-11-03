@@ -22,8 +22,8 @@
                                 <input type="radio" value="ลงมอ" onclick="down()" autocomplete="off"> ลงมอ
                             </label>
                     </div>
-                    <label>เลือกรถ </label>
-                        <select class='form-control mb-2' name='location_down' required>
+                    <label class="mt-2">เลือกรถ </label>
+                        <select class='form-control mb-2 ' name='location_down' required>
                             <option value="" selected>เลือก</option>
                         </select>
 
@@ -44,7 +44,7 @@
                         </select>
 
                         <label>จำนวนที่นั่ง </label>
-                        <input class='form-control mb-2' name='seat_empty' type='number' required/>
+                        <input class='form-control mb-2' name='seat_amount' type='number' required/>
 
                         <label>ราคา </label>
                         <input class='form-control mb-2' name='price' type='number' required/>

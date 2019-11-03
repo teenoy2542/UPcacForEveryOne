@@ -53,16 +53,18 @@ class DriverController extends Controller
         $time = $_POST['time'];
         $location_up = $_POST['location_up'];
         $location_down = $_POST['location_down'];
-        $seat_empty = $_POST['seat_empty'];
+        $seat_amount = $_POST['seat_amount'];
+        $seat_empty = $_POST['seat_amount']-1;
         $price = $_POST['price'];
         if($location_up == 'ที่รอรถเมล์หน้ามอ'){
             $category = 'ขึ้น';
         }elseif($location_down == 'ที่รอรถเมล์หน้ามอ'){
             $category = 'ลง';
         }
+        $status = 'on';
 
-        DB::insert("insert into drivers (id_users, date, time, location_up, location_down, seat_empty, price, category) values (?, ?, ?, ?, ?, ?, ?, ?)",[
-            $id_users, $date, $time, $location_up, $location_down, $seat_empty, $price, $category
+        DB::insert("insert into drivers (id_users, date, time, location_up, location_down, seat_amount, seat_empty, price, category, status) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",[
+            $id_users, $date, $time, $location_up, $location_down, $seat_amount, $seat_empty, $price, $category, $status
         ]);
 
         return redirect('/');
