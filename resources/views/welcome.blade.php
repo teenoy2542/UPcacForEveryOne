@@ -5,6 +5,6 @@
     <br>
     <a href="/event-up"><button type="button" class="btn btn-outline-secondary" style="font-size: 80px">ขึ้นมอ</button></a>
     
-    <button type="button" class="btn btn-outline-secondary" style="font-size: 80px">ลงมอ</button>
+    <a href="/event-down"><button type="button" class="btn btn-outline-secondary" style="font-size: 80px">ลงมอ</button></a>
 </div>
 @endsection
