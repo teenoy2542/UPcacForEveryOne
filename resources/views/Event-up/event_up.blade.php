@@ -30,7 +30,7 @@
                                         <td>{{$item->status}}</td>
 
                                         <?php 
-                                        echo "<td><a href='/travel/$item->travel_id' ><button type='button' class='btn btn-outline-info'>เข้าร่วมการเดินทาง</button></a></td>";
+                                        echo "<td><a href='/travel/$item->id' ><button type='button' class='btn btn-outline-info'>เข้าร่วมการเดินทาง</button></a></td>";
                                         ?>
                                         
                                       </tr>

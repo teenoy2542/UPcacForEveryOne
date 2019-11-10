@@ -15,9 +15,9 @@ class CreateTravelsTable extends Migration
     {
         Schema::create('travels', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('id_users');
+            $table->string('users_id');
             $table->string('date');
-            $table->string('time');
+            $table->string('time_start');
             $table->string('location_up');
             $table->string('location_down');
             $table->integer('seat_amount');
