@@ -10,7 +10,7 @@
                         <p>ทะเบียนรถ : {{$acceptdata->id_license_car}}</p>
                         <p>สถานที่รับ : {{$acceptdata->location_up}}</p> 
                         <p>ราคา :  {{$acceptdata->price}}</p>
-                        <p>จำนวนที่นั่ง : {{$acceptdata->seat_amount}}</p>                                      
+                        <p>จำนวนที่นั่ง : {{$acceptdata->seat_empty}}/{{$acceptdata->seat_amount}}</p>                                      
                     </div>
                     <div class="col-6">
                         <p>เวลา : {{$acceptdata->time_start}}</p>

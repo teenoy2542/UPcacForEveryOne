@@ -19,7 +19,7 @@
                     <div class="col-md">
                         <p>เวลา :{{$dataset->time_start}}</p>
                         <p>ราคา :{{$dataset->price}}</p>
-                        <p>จำนวนที่นั่ง :{{$dataset->seat_amount}}</p>                            
+                        <p>จำนวนที่นั่ง :{{$dataset->seat_empty}}/{{$dataset->seat_amount}}</p>                            
                     </div>
                     
                     <div align='center'>

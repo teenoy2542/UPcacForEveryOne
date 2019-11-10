@@ -25,7 +25,7 @@
                                       <tr>
                                         <th scope="row">{{$item->time_start}}</th>
                                         <td>{{$item->price}}</td>
-                                        <td>{{$item->seat_amount}}</td>
+                                        <td>{{$item->seat_empty}}/{{$item->seat_amount}}</td>
                                         <td>{{$item->location_up}}</td>
                                         <td>{{$item->status}}</td>
 
