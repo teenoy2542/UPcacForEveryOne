@@ -26,7 +26,7 @@ class LicenseCarController extends Controller
      */
     public function create()
     {
-        return view('driver.registercar');
+        return view('driver.register_car');
     }
 
     /**
