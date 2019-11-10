@@ -42,7 +42,7 @@ class LicenseCarController extends Controller
         $brand_car = $_POST['brand_car'];
         $model_car = $_POST['model_car'];
         $color_car = $_POST['color_car'];
-        $number_seats = $_POST['number_seats'];
+        $number_seats = 0;
 
         DB::insert("insert into license_car (id_users, license_car, brand_car, model_car, color_car, number_seats) values (?, ?, ?, ?, ?, ?)",[
             $id_users, $license_car, $brand_car, $model_car, $color_car, $number_seats

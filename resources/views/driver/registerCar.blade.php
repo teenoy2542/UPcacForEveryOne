@@ -43,18 +43,6 @@
                                 <input class='form-control mb-2' name='color_car' type='text' required/>
                             </div>
                         </div>
-                        <div class="mb-2">
-                            <label>จำนวนที่นั่ง</label>
-                            <div>
-                                <select id='number_seats' onchange="disp(dis)" class='form-control' name="number_seats" required>
-                                        <option value="" disabled selected>เลือก</option>
-                                        <option value="2">2</option>
-                                        <option value="4">4</option>
-                                        <option value="6">6</option>
-                                </select>
-                            </div>
-                        </div>
-
                         <div align='right'>
                             <input class='btn btn-primary mb-2' type='submit' value='ลงทะเบียนรถ'/>
                         </div>
