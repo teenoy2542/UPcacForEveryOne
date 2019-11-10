@@ -36,9 +36,6 @@
                             @endforeach
                         </select>
 
-                       <label>วันที่ </label>
-                       <input class='form-control mb-2' name='date' type='date' required/>
-
                        <label>เวลา </label>
                        <input class='form-control mb-2' name='time_start' type='text' required/>
 

@@ -29,7 +29,7 @@ class HomeController extends Controller
         if (Auth::user()->type == 'User'){
             return view('home');
         }else{
-            return view('home');
+            return view('driver.register_car');
         }
     }
 }

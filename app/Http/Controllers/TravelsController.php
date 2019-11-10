@@ -27,7 +27,20 @@ class TravelsController extends Controller
             return view('home');
         }
         $datacar = DB::table('license_car')->where('id_users', Auth::user()->id)->get();
-        return view('driver.create_travel', compact('datacar'));
+        return view('driver.create_travels', compact('datacar'));
+    }
+
+    public function datatavels()
+    {
+        $dataon = DB::table('travels')->where('id_users', Auth::user()->id)->get();
+        $dataon = $dataon[0];
+        return view('driver.date_travels', compact('dataon'));
+    }
+
+    public function deletedata($id)
+    {
+        $deldata = travels::where('id', '=', $id)->delete();
+        return redirect('/driver/travel');
     }
 
     /**
@@ -37,7 +50,7 @@ class TravelsController extends Controller
      */
     public function create()
     {
-        return view('driver.create_travel');
+        return view('driver.create_travels');
     }
 
 
@@ -51,7 +64,7 @@ class TravelsController extends Controller
     {
         $id_users = Auth::user()->id;
         $id_license_car = $_POST['id_license_car'];
-        $date = $_POST['date'];
+        $date = '0';
         $time_start = $_POST['time_start'];
         $location_up = $_POST['location_up'];
         $location_down = $_POST['location_down'];
@@ -121,23 +134,6 @@ class TravelsController extends Controller
      */
     public function destroy($id)
     {
-        //
     }
-    public function Getdata()
-    {
-       // $travels = DB::select('select * from travel');
-       // return view('Event-up.event_up', compact('travels'));
-    }
-    public function  selectedtravel($id)
-    {
-       // $dataset = DB::table('travel')->where('travel_id', $id)->get();
-       // $dataset = $dataset[0];
-       // return view('Event-up.confrim_up', compact('dataset'));
-    }
-    public function accept($id)
-    {
-       // $acceptdata = DB::table('travel')->where('travel_id', $id)->get();
-       // $acceptdata = $acceptdata[0];
-       // return view('Event-up.accept_up', compact('acceptdata'));
-    }
+
 }
