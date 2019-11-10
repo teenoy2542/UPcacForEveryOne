@@ -24,13 +24,18 @@
                             </label>
                     </div>
                     @endif
-                    <label class="mt-2">เลือกรถ </label>
-                        <select class='form-control mb-2 ' name='location_down' required>
-                            <option value="" selected>เลือก</option>
-                        </select>
 
                     <form action="{{url("/driver/travel")}}" method="post">
                        {{ csrf_field() }}
+
+                       <label class="mt-2">เลือกรถ </label>
+                        <select class='form-control mb-2 ' name='id_license_car' required>
+                            <option value="" selected disabled>เลือก</option>
+                            @foreach ($datacar as $ds)
+                            <option value="{{$ds->id}}">{{$ds->brand_car}} / {{$ds->model_car}}</option>
+                            @endforeach
+                        </select>
+
                        <label>วันที่ </label>
                        <input class='form-control mb-2' name='date' type='date' required/>
 
@@ -38,7 +43,7 @@
                        <input class='form-control mb-2' name='time' type='text' required/>
 
                        <label>สถานที่ขึ้น</label>
-                        <input class='form-control mb-2' name='location_up' type='text' value="ที่รอรถเมล์หน้ามอ" placeholder="ที่รอรถเมล์หน้ามอ" disabled/>
+                        <input class='form-control mb-2' name='location_up' type='text' required/>
 
                         <label>สถานทีลง</label>
                         <input class='form-control mb-2' name='location_down' type='text' required/>
@@ -53,14 +58,14 @@
                         <div align='right'>
                             <input class='btn btn-primary mb-2' type='submit' value='Save'/>
                         </div>
-                        <input type="text" class="col-0" value="ที่รอรถเมล์หน้ามอ" name='location_up' style='display:none;'>
-                   </form>
+                    </form>
 
                 </div>
             </div>
         </div>
     </div>
 </div>
+<input type="text" class="col-0" value="ที่รอรถเมล์หน้ามอ" name='' style='display:none;'>
 <script>
 
     // function up(){

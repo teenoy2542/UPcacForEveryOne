@@ -15,7 +15,8 @@ class CreateTravelsTable extends Migration
     {
         Schema::create('travels', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('users_id');
+            $table->string('id_users');
+            $table->string('id_license_car');
             $table->string('date');
             $table->string('time_start');
             $table->string('location_up');
@@ -23,7 +24,6 @@ class CreateTravelsTable extends Migration
             $table->integer('seat_amount');
             $table->integer('seat_empty');
             $table->integer('price');
-            $table->string('category');
             $table->string('status');
             $table->timestamps();
         });
