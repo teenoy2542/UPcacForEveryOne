@@ -25,8 +25,6 @@ Route::resource('/driver', 'DriverController');
 
 Route::get('/event-up','TravelController@Getdata');
 
-Route::get('/event-down','TravelController@Getdata');
-
 Route::get('/travel/{id}','TravelController@selectedtravel');
 
 Route::get('/accept/{id}','TravelController@accept');    
