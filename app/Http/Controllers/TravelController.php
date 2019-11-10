@@ -8,7 +8,7 @@ use DB;
 
 class TravelController extends Controller
 {
-    
+
     public function Getdata()
     {
         $travels = DB::select('select * from travels');
@@ -22,7 +22,7 @@ class TravelController extends Controller
     }
     public function accept($id)
     {
-        DB::table('travels')-> where('id', $id)->increment('seat_empty',1);
+        DB::table('travels')-> where('id', $id)->increment('seat_amount',1);
         return redirect('/accept/'.$id.'/see');
     }
     public function clsa($id)
