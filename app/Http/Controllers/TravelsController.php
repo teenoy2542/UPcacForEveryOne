@@ -52,11 +52,11 @@ class TravelsController extends Controller
         $id_users = Auth::user()->id;
         $id_license_car = $_POST['id_license_car'];
         $date = $_POST['date'];
-        $time = $_POST['time'];
+        $time_start = $_POST['time_start'];
         $location_up = $_POST['location_up'];
         $location_down = $_POST['location_down'];
-        $seat_amount = $_POST['seat_amount'];
-        $seat_empty = $_POST['seat_amount']-1;
+        $seat_amount = 0;
+        $seat_empty = $_POST['seat_empty'];
         $price = $_POST['price'];
         $status = 'on';
 
@@ -68,7 +68,7 @@ class TravelsController extends Controller
             'id_users' => $id_users,
             'id_license_car' => $id_license_car,
             'date' => $date,
-            'time' => $time,
+            'time_start' => $time_start,
             'location_up' => $location_up,
             'location_down' => $location_down,
             'seat_amount' => $seat_amount,
