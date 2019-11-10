@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 use DB;
 use Auth;
-use App\Driver;
+use App\Travels;
 
-class DriverController extends Controller
+class TravelsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,7 +26,7 @@ class DriverController extends Controller
         if (Auth::user()->type == 'User'){
             return view('home');
         }
-        return view('driver.create');
+        return view('driver.create_travel');
     }
 
     /**
@@ -63,9 +63,21 @@ class DriverController extends Controller
         }
         $status = 'on';
 
-        DB::insert("insert into drivers (id_users, date, time, location_up, location_down, seat_amount, seat_empty, price, category, status) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",[
-            $id_users, $date, $time, $location_up, $location_down, $seat_amount, $seat_empty, $price, $category, $status
-        ]);
+        //DB::insert("insert into travels (id_users, date, time, location_up, location_down, seat_amount, seat_empty, price, category, status) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",[
+        //    $id_users, $date, $time, $location_up, $location_down, $seat_amount, $seat_empty, $price, $category, $status
+        //]);
+
+        Travels::create([
+            'id_users' => $id_users,
+            'date' => $date,
+            'time' => $time,
+            'location_up' => $location_up,
+            'location_down' => $location_down,
+            'seat_amount' => $seat_amount,
+            'seat_empty' => $seat_empty,
+            'price' => $price,
+            'category' =>  $category,
+            'status' =>  $status]);
 
         return redirect('/');
     }
@@ -113,5 +125,22 @@ class DriverController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function Getdata()
+    {
+       // $travels = DB::select('select * from travel');
+       // return view('Event-up.event_up', compact('travels'));
+    }
+    public function  selectedtravel($id)
+    {
+       // $dataset = DB::table('travel')->where('travel_id', $id)->get();
+       // $dataset = $dataset[0];
+       // return view('Event-up.confrim_up', compact('dataset'));
+    }
+    public function accept($id)
+    {
+       // $acceptdata = DB::table('travel')->where('travel_id', $id)->get();
+       // $acceptdata = $acceptdata[0];
+       // return view('Event-up.accept_up', compact('acceptdata'));
     }
 }
