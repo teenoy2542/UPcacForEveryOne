@@ -40,7 +40,7 @@
                        <input class='form-control mb-2' name='date' type='date' required/>
 
                        <label>เวลา </label>
-                       <input class='form-control mb-2' name='time' type='text' required/>
+                       <input class='form-control mb-2' name='time_start' type='text' required/>
 
                        <label>สถานที่ขึ้น</label>
                         <input class='form-control mb-2' name='location_up' type='text' required/>
@@ -48,8 +48,8 @@
                         <label>สถานทีลง</label>
                         <input class='form-control mb-2' name='location_down' type='text' required/>
 
-                        <label>จำนวนที่นั่ง </label>
-                        <input class='form-control mb-2' name='seat_amount' type='number' required/>
+                        <label>จำนวนที่นั่งว่าง </label>
+                        <input class='form-control mb-2' name='seat_empty' type='number' required/>
 
                         <label>ราคา </label>
                         <input class='form-control mb-2' name='price' type='number' required/>
