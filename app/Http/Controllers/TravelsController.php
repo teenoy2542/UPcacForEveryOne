@@ -26,7 +26,8 @@ class TravelsController extends Controller
         if (Auth::user()->type == 'User'){
             return view('home');
         }
-        return view('driver.create_travel');
+        $datacar = DB::table('license_car')->where('id_users', Auth::user()->id)->get();
+        return view('driver.create_travel', compact('datacar'));
     }
 
     /**
@@ -36,7 +37,7 @@ class TravelsController extends Controller
      */
     public function create()
     {
-        return view('driver.create');
+        return view('driver.create_travel');
     }
 
 
@@ -49,6 +50,7 @@ class TravelsController extends Controller
     public function store(Request $request)
     {
         $id_users = Auth::user()->id;
+        $id_license_car = $_POST['id_license_car'];
         $date = $_POST['date'];
         $time = $_POST['time'];
         $location_up = $_POST['location_up'];
@@ -56,11 +58,6 @@ class TravelsController extends Controller
         $seat_amount = $_POST['seat_amount'];
         $seat_empty = $_POST['seat_amount']-1;
         $price = $_POST['price'];
-        if($location_up == 'ที่รอรถเมล์หน้ามอ'){
-            $category = 'ขึ้น';
-        }elseif($location_down == 'ที่รอรถเมล์หน้ามอ'){
-            $category = 'ลง';
-        }
         $status = 'on';
 
         //DB::insert("insert into travels (id_users, date, time, location_up, location_down, seat_amount, seat_empty, price, category, status) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",[
@@ -69,6 +66,7 @@ class TravelsController extends Controller
 
         Travels::create([
             'id_users' => $id_users,
+            'id_license_car' => $id_license_car,
             'date' => $date,
             'time' => $time,
             'location_up' => $location_up,
@@ -76,7 +74,6 @@ class TravelsController extends Controller
             'seat_amount' => $seat_amount,
             'seat_empty' => $seat_empty,
             'price' => $price,
-            'category' =>  $category,
             'status' =>  $status]);
 
         return redirect('/');
