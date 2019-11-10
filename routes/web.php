@@ -13,7 +13,7 @@
 
 
 
-Route::resource('/', 'IndexController');
+Route::resource('/', 'WelcomeController');
 
 Auth::routes();
 
@@ -21,13 +21,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/driver/licensecar', 'LicenseCarController');
 
-Route::resource('/driver', 'DriverController');
+Route::resource('/driver/travel', 'TravelsController');
 
 Route::get('/event-up','TravelController@Getdata');
 
 Route::get('/travel/{id}','TravelController@selectedtravel');
 
-Route::get('/accept/{id}','TravelController@accept');    
+Route::get('/accept/{id}','TravelController@accept');
 
 Route::get('/getdata', 'TravelController@Getdata');
 

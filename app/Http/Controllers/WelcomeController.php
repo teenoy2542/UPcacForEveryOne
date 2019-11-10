@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 use DB;
 use Auth;
-use App\Driver;
+use App\Travels;
 
-class IndexController extends Controller
+class WelcomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $users = Driver::all();
+        $users = Travels::all();
         return view('welcome', compact('users'));
     }
 
