@@ -89,7 +89,7 @@ class TravelsController extends Controller
             'price' => $price,
             'status' =>  $status]);
 
-        return redirect('/');
+        return redirect('/driver/date');
     }
 
     /**
@@ -134,6 +134,11 @@ class TravelsController extends Controller
      */
     public function destroy($id)
     {
+    }
+
+    public function wol()
+    {
+        return view('welcome');
     }
 
 }

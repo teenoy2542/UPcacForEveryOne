@@ -27,7 +27,7 @@ class HomeController extends Controller
     public function index()
     {
         if (Auth::user()->type == 'User'){
-            return view('home');
+            return redirect('/');
         }else{
             return view('driver.register_car');
         }

@@ -48,7 +48,7 @@ class LicenseCarController extends Controller
             $id_users, $license_car, $brand_car, $model_car, $color_car, $number_seats
         ]);
 
-        return redirect('/');
+        return redirect('/driver/travel');
     }
 
     /**

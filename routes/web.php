@@ -19,7 +19,7 @@ Route::get('/driver/del/{id}', 'TravelsController@deletedata');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/getdata', 'TravelController@Getdata');
+Route::get('/','TravelController@Getdata');
 
 Route::get('/event-up','TravelController@Getdata');
 
