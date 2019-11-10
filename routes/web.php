@@ -27,7 +27,9 @@ Route::get('/event-up','TravelController@Getdata');
 
 Route::get('/travel/{id}','TravelController@selectedtravel');
 
-Route::get('/accept/{id}','TravelController@accept');    
+Route::get('/accept/{id}','TravelController@accept');
+
+Route::get('/accept/{id}/see','TravelController@clsa');
 
 Route::get('/getdata', 'TravelController@Getdata');
 

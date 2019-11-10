@@ -24,7 +24,7 @@
                     
                     <div align='center'>
                         <?php 
-                        echo "<a href='/accept/$dataset->travel_id'><button type='button' class='btn btn-outline-info'>ยืนยัน</button></a>";
+                        echo "<a href='/accept/$dataset->travel_id'><button type='button' class='btn btn-outline-info'>ยืนยัน</button></a>";                        
                         ?>
                     </div>
                     <br>
