@@ -59,6 +59,10 @@
                                     <a class="dropdown-item" href="{{ url("/driver/date") }}">หน้าแรก</a>
                                     <a class="dropdown-item" href="{{ url("/driver/travel") }}">สร้างฟอร์ม</a>
                                     <a class="dropdown-item" href="{{ url("/driver/licensecar/create") }}">ลงทะเบียนรถ</a>
+
+                                    @else
+                                    <a class="dropdown-item">แก้ไขข้อมูลส่วนตัว</a>
+
                                     @endif
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
