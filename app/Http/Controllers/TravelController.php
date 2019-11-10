@@ -8,6 +8,7 @@ use DB;
 
 class TravelController extends Controller
 {
+    
     public function Getdata()
     {
         $travels = DB::select('select * from travels');

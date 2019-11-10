@@ -7,7 +7,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-6">
-                        <p>ทะเบียนรถ : {{$acceptdata->car_id}}</p>
+                        <p>ทะเบียนรถ : {{$acceptdata->id_license_car}}</p>
                         <p>สถานที่รับ : {{$acceptdata->location_up}}</p> 
                         <p>ราคา :  {{$acceptdata->price}}</p>
                         <p>จำนวนที่นั่ง : {{$acceptdata->seat_amount}}</p>                                      

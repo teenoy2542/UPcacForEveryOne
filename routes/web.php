@@ -13,7 +13,9 @@
 
 
 
-Route::resource('/', 'WelcomeController');
+//Route::resource('/', 'WelcomeController');
+
+Route::get('/', 'TravelController@Getdata');
 
 Auth::routes();
 
