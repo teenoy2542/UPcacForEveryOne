@@ -14,7 +14,7 @@ class TravelController extends Controller
         return view('Event-up.event_up', compact('travels'));
 
         $travels = DB::select('select * from travel');
-        return view('Event_down.event_down', compact('travels'));
+        return view('Event-up.event_up', compact('travels'));
     }
     public function  selectedtravel($id)
     {
@@ -35,11 +35,5 @@ class TravelController extends Controller
         $acceptdata = DB::table('travels')->where('travel_id', $id)->get();
         $acceptdata = $acceptdata[0];
         return view('Event_down.accept_down', compact('acceptdata'));
-    }
-
-    public function Getdatadown()
-    {
-        $travels = DB::select('select * from travel');
-        return view('Event_down.event_down', compact('travels'));
     }
 }

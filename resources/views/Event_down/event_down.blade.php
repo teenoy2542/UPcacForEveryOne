@@ -6,7 +6,7 @@
             <div class="card-body">
                 <div class="col-md">
                     <div class="card">
-                        <div class="card-header text-center">รถที่จะลงมอ</div>
+                        <div class="card-header text-center">รถที่จะขึ้นมอ</div>
                         <div class="card-body">
                             
                                 <table class="table table-hover">
