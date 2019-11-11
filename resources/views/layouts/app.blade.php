@@ -23,8 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="height:55px;">
             <div class="container">
-                {{-- <button class="w3-button w3-white w3-large" onclick="w3_open()">&#9776;</button> --}}
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand">
                     UPCAC
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -57,6 +56,7 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
                                     @if(Auth::user()->type == 'Driver')
+                                    <a class="dropdown-item" href="{{ url("/driver/date") }}">หน้าแรก</a>
                                     <a class="dropdown-item" href="{{ url("/driver/travel") }}">สร้างฟอร์ม</a>
                                     <a class="dropdown-item" href="{{ url("/driver/licensecar/create") }}">ลงทะเบียนรถ</a>
 
@@ -84,11 +84,6 @@
         </nav>
 
         <main class="">
-                {{-- <div class="w3-sidebar w3-bar-block w3-dark-grey w3-animate-left" style="display:none" id="mySidebar">
-                        <a href="#" class="w3-bar-item w3-button">บัญชีผู้ใช้</a>
-                        <a href="#" class="w3-bar-item w3-button">รายการ</a>
-                        <a href="#" class="w3-bar-item w3-button">การตั้งค่า</a>
-                      </div> --}}
             @yield('content')
         </main>
     </div>

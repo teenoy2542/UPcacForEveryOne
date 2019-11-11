@@ -3,6 +3,6 @@
 @section('content')
 <div class="container" align='center'>
     <br>
-    <h1>Hello! Supamit Padtip</h1>
+    <p class="" style="font-size: 100px">Upcac</p>
 </div>
 @endsection

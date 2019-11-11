@@ -1,4 +1,4 @@
-@extends('layouts.app')  
+@extends('layouts.app')
 @section('content')
 
     <div class="container">
@@ -8,7 +8,7 @@
                     <div class="card">
                         <div class="card-header text-center">รายการเดินทาง</div>
                         <div class="card-body">
-                            
+
                                 <table class="table table-hover">
                                     <thead align="center">
                                       <tr>
@@ -25,21 +25,21 @@
                                       <tr>
                                         <th scope="row">{{$item->time_start}}</th>
                                         <td>{{$item->price}}</td>
-                                        <td>{{$item->seat_empty}}/{{$item->seat_amount}}</td>
+                                        <td>{{$item->seat_amount}}/{{$item->seat_empty}}</td>
                                         <td>{{$item->location_up}}</td>
                                         <td>{{$item->status}}</td>
 
-                                        <?php 
+                                        <?php
                                         echo "<td><a href='/travel/$item->id' ><button type='button' class='btn btn-outline-info'>เข้าร่วมการเดินทาง</button></a></td>";
                                         ?>
-                                        
+
                                       </tr>
                                     @endforeach
                                     </tbody>
-                                  </table>          
-                            
+                                  </table>
+
                         </div>
-                            
+
                     </div>
                 </div>
             </div>

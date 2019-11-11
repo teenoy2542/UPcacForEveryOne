@@ -11,19 +11,15 @@
 |
 */
 
-
-
-Route::resource('/', 'WelcomeController');
-
-Route::get('/show', 'TravelController@Getdata');
-
 Auth::routes();
+
+Route::get('/driver/date', 'TravelsController@datatavels');
+
+Route::get('/driver/del/{id}', 'TravelsController@deletedata');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/driver/licensecar', 'LicenseCarController');
-
-Route::resource('/driver/travel', 'TravelsController');
+Route::get('/','TravelController@Getdata');
 
 Route::resource('/inform', 'InformController');
 
@@ -37,3 +33,6 @@ Route::get('/accept/{id}/see','TravelController@clsa');
 
 Route::get('/getdata', 'TravelController@Getdata');
 
+Route::resource('/driver/licensecar', 'LicenseCarController');
+
+Route::resource('/driver/travel', 'TravelsController');
