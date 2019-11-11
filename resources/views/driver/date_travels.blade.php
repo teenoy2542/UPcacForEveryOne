@@ -6,7 +6,7 @@
     <div class="card-body">
         <div class="col-md">
             <div class="card">
-                <div class="card-header text-center">สถานนะ</div>
+                <div class="card-header text-center" style="color:whitesmoke; background-color: #59ACF6;">สถานนะ</div>
                 <div class="card-body">
                     <div class="col-md">
                         <p>สถานที่รับ : {{$dataon->location_up}}</p>

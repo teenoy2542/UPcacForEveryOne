@@ -19,7 +19,11 @@ Route::get('/driver/del/{id}', 'TravelsController@deletedata');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/','TravelController@Getdata');
+// Route::get('/','TravelController@Getdata');
+Route::resource('/', 'WelcomeController');
+
+Route::get('/inform/travel','InformTravelController@show');
+
 
 Route::resource('/inform', 'InformController');
 

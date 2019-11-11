@@ -6,7 +6,7 @@
             <div class="card-body">
                 <div class="col-md">
                     <div class="card">
-                        <div class="card-header text-center">รายการเดินทาง</div>
+                        <div class="card-header text-center" style="color:whitesmoke; background-color: #59ACF6;">รายการเดินทาง</div>
                         <div class="card-body">
 
                                 <table class="table table-hover">
@@ -16,6 +16,7 @@
                                         <th scope="col">ราคา</th>
                                         <th scope="col">จำนวนที่นั่ง</th>
                                         <th scope="col">สถานที่รับ</th>
+                                        <th scope="col">สถานที่ส่ง</th>
                                         <th scope="col">สถานะการเดินทาง</th>
                                         <th scope="col">การเดินทาง</th>
                                       </tr>
@@ -27,6 +28,7 @@
                                         <td>{{$item->price}}</td>
                                         <td>{{$item->seat_amount}}/{{$item->seat_empty}}</td>
                                         <td>{{$item->location_up}}</td>
+                                        <td>{{$item->location_down}}</td>
                                         <td>{{$item->status}}</td>
 
                                         <?php

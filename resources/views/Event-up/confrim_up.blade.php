@@ -7,7 +7,7 @@
     <div class="card-body">
         <div class="col-md">
             <div class="card">
-                <div class="card-header text-center">ยืนยันการเดินทาง</div>
+                <div class="card-header text-center" style="color:whitesmoke; background-color: #59ACF6;">ยืนยันการเดินทาง</div>
                 <div class="card-body">
                     <div class="col-12 text-center">
                         <i class="material-icons" style="font-size:30px;color:black">place</i>

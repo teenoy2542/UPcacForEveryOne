@@ -21,11 +21,14 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="height:55px;">
+        <nav class="navbar navbar-expand-md  shadow-sm" style="height:55px; background-color: #15A2EA;">
             <div class="container">
-                <a class="navbar-brand">
-                    UPCAC
-                </a>
+                <div>    
+                    <img src="1150.png" height="45px" width="55px">
+                    <a class="navbar-brand" style="color:whitesmoke">
+                        UPCAC
+                    </a>
+                </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -41,29 +44,30 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('เข้าสู่ระบบ') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}" style="color:whitesmoke">{{ __('เข้าสู่ระบบ') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('สมัครสมาชิก') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}"style="color:whitesmoke">{{ __('สมัครสมาชิก') }}</a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color:whitesmoke">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
                                     @if(Auth::user()->type == 'Driver')
-                                    <a class="dropdown-item" href="{{ url("/driver/date") }}">หน้าแรก</a>
+                                    <a class="dropdown-item" href="{{ url("/driver/date") }}">ข้อมูลการเดินทาง</a>
                                     <a class="dropdown-item" href="{{ url("/driver/travel") }}">สร้างฟอร์ม</a>
                                     <a class="dropdown-item" href="{{ url("/driver/licensecar/create") }}">ลงทะเบียนรถ</a>
+                                    <a class="dropdown-item" href='{{ url('/inform') }}'>แก้ไขข้อมูลส่วนตัว</a>
 
                                     @else
-                                    <a class="dropdown-item" href='{{ url('/inform') }}'>แก้ไขข้อมูลส่วนตัว</a>
                                     <a class="dropdown-item" href="{{ url("/event-up") }}">การเดินทาง</a>
-                                    
+                                    <a class="dropdown-item" href='{{ url('/inform') }}'>แก้ไขข้อมูลส่วนตัว</a>
+                                    <a class="dropdown-item" href="{{ url("/inform/travel") }}">ข้อมูลการเดินทาง</a>
                                     @endif
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
