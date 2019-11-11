@@ -25,6 +25,8 @@ Route::resource('/driver/licensecar', 'LicenseCarController');
 
 Route::resource('/driver/travel', 'TravelsController');
 
+Route::resource('/inform', 'InformController');
+
 Route::get('/event-up','TravelController@Getdata');
 
 Route::get('/travel/{id}','TravelController@selectedtravel');

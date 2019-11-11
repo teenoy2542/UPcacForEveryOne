@@ -61,7 +61,8 @@
                                     <a class="dropdown-item" href="{{ url("/driver/licensecar/create") }}">ลงทะเบียนรถ</a>
 
                                     @else
-                                    <a class="dropdown-item">แก้ไขข้อมูลส่วนตัว</a>
+                                    <a class="dropdown-item" href='{{ url('/inform') }}'>แก้ไขข้อมูลส่วนตัว</a>
+                                    <a class="dropdown-item" href="{{ url("/event-up") }}">การเดินทาง</a>
                                     
                                     @endif
 

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
+@section('content')<br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -13,8 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    เข้าสู้ระบบสำเร็จ
                 </div>
             </div>
         </div>
