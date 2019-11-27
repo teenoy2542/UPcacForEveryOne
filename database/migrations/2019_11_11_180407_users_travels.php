@@ -14,7 +14,7 @@ class UsersTravels extends Migration
     public function up()
     {
         Schema::create('users_travels', function (Blueprint $table) {
-            $table->integer('Users_id');
+            $table->integer('users_id');
             $table->string('travel_id');            
         });
     }

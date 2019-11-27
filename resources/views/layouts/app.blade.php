@@ -23,8 +23,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md  shadow-sm" style="height:55px; background-color: #15A2EA;">
             <div class="container">
-                <div>    
-                    <img src="1150.png" height="45px" width="55px">
+                <div>                   
+                    <img src="{{url('1150.png')}}" height="48px" width="52px">                    
                     <a class="navbar-brand" style="color:whitesmoke">
                         UPCAC
                     </a>
@@ -92,19 +92,4 @@
         </main>
     </div>
 </body>
-<script>
-    var side = false;
-        function w3_open() {
-            side = !side;
-            if(side == true){
-                document.getElementById("mySidebar").style.display = "block";
-            }else{
-                w3_close()
-            }
-
-        }
-        function w3_close() {
-            document.getElementById("mySidebar").style.display = "none";
-        }
-        </script>
 </html>

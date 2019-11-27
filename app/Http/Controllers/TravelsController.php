@@ -39,8 +39,14 @@ class TravelsController extends Controller
 
     public function deletedata($id)
     {
-        $deldata = travels::where('id', '=', $id)->delete();
-        return redirect('/driver/travel');
+        $deldata = travels::where('id', '=', $id)->update(['status'=>'off']);
+        return redirect('/driver/date');
+    }
+
+    public function ondata($id)
+    {
+        $deldata = travels::where('id', '=', $id)->update(['status'=>'on']);
+        return redirect('/driver/date');
     }
 
     /**

@@ -14,9 +14,13 @@
                         <p>เวลา : {{$dataon->time_start}}</p>
                         <p>ราคา : {{$dataon->price}}</p>
                         <p>จำนวนผู้เข้าร่วม : {{$dataon->seat_amount}} / {{$dataon->seat_empty}}</p>
+                        <p>สถานะ : {{$dataon->status}}</p>
                         <?php
-                        echo "<td><a href='/driver/del/$dataon->id' ><button type='button' class='btn btn-outline-info'>สิ้นสุด</button></a></td>";
+                        echo "<td><a href='/driver/ondata/$dataon->id' ><button type='button' class='btn btn-outline-success'>เปิดการเดินทาง</button></a></td>";
                         ?>
+                        <?php
+                        echo "<td><a href='/driver/del/$dataon->id' ><button type='button' class='btn btn-outline-danger'>ปิดการเดินทาง</button></a></td>";
+                        ?>                        
                     </div>
                 </div>
             </div>

@@ -17,6 +17,8 @@ Route::get('/driver/date', 'TravelsController@datatavels');
 
 Route::get('/driver/del/{id}', 'TravelsController@deletedata');
 
+Route::get('/driver/ondata/{id}', 'TravelsController@ondata');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Route::get('/','TravelController@Getdata');
